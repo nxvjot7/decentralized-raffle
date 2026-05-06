@@ -1,0 +1,19 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+remappings = [
+    '@chainlink/contracts/=lib/chainlink-brownie-contracts/contracts',
+    'forge-std/=lib/forge-std/src/',
+    '@solmate=lib/solmate/src/'
+]
+fs_permissions = [
+    { access = "read", path = "./broadcast" },
+    { access = "read", path = "./reports" },
+]
+solc_version = "0.8.19"
+
+[profile.ci]
+optimizer = true
+optimizer_runs = 200
+via_ir = true
